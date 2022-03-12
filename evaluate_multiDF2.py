@@ -380,7 +380,8 @@ if __name__ == '__main__':
     model = videomatchrcnn_resnet50_fpn(pretrained_backbone=True, num_classes=14)
 
     ckpt = torch.load(args.ckpt_path)
-    model.load_state_dict(ckpt['model_state_dict'])
+    state = {k[7:]: v for k, v in ckpt['model_state_dict']}
+    model.load_state_dict(state)
 
     model.to(device)
     model.eval()
