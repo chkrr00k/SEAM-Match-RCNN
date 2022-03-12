@@ -5,7 +5,8 @@ import numpy as np
 import torch
 import torchvision
 from PIL import Image
-from torch._six import int_classes as _int_classes
+#from torch._six import int_classes as _int_classes
+_int_classes = int
 from torch.utils.data import RandomSampler, DistributedSampler
 from torch.utils.data.sampler import BatchSampler
 from torch.utils.data.sampler import Sampler
