@@ -372,7 +372,7 @@ if __name__ == '__main__':
 
     test_dataset = MultiDeepFashion2Dataset(root=args.root_test
                                             , ann_file=args.test_annots,
-                                            transforms=T.ToTensor(), filter_onestreet=True)
+                                            transforms=T.ToTensor(), filter_onestreet=False)# True)
 
     data_loader_test = get_dataloader(test_dataset, batch_size=args.batch_size, is_parallel=distributed, n_products=1,
                                       n_workers=args.n_workers)
