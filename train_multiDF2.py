@@ -52,10 +52,10 @@ def train(args):
     # DATASET ----------------------------------------------------------------------------------------------------------
     train_dataset = MultiDeepFashion2Dataset(root=args.root_train
                                              , ann_file=args.train_annots,
-                                             transforms=get_transform(True), noise=True, filter_onestreet=True)
+                                             transforms=get_transform(True), noise=True, filter_onestreet=False)#True)
     test_dataset = MultiDeepFashion2Dataset(root=args.root_test
                                             , ann_file=args.test_annots,
-                                            transforms=get_transform(False), filter_onestreet=True)
+                                            transforms=get_transform(False), filter_onestreet=False)#True)
     # ------------------------------------------------------------------------------------------------------------------
 
     # DATALOADER--------------------------------------------------------------------------------------------------------
